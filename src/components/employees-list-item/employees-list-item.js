@@ -1,6 +1,8 @@
-import "./employers-list-item.css";
 import { Component } from "react";
-class EmployersListItem extends Component {
+
+import "./employees-list-item.css";
+
+class EmployeesListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,12 +26,11 @@ class EmployersListItem extends Component {
   render() {
     const { name, salary, onDelete } = this.props;
     const { increase, rise } = this.state;
-    let classNames = "list-group-item d-flex justify-content-between";
 
+    let classNames = "list-group-item d-flex justify-content-between";
     if (increase) {
       classNames += " increase";
     }
-
     if (rise) {
       classNames += " like";
     }
@@ -47,7 +48,7 @@ class EmployersListItem extends Component {
         <div className="d-flex justify-content-center align-items-center">
           <button
             type="button"
-            className="btn-cookie btn-sm"
+            className="btn-cookie btn-sm "
             onClick={this.onIncrease}
           >
             <i className="fas fa-cookie"></i>
@@ -67,4 +68,4 @@ class EmployersListItem extends Component {
   }
 }
 
-export default EmployersListItem;
+export default EmployeesListItem;
